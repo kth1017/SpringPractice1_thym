@@ -1,0 +1,2 @@
+! 정상이던 코드가 다음날 실행이 안됨
+- run App으로 실행 안됨 > boot run으로 실행됨 > boot run으로 킨 뒤에는 run App도 실행됨 > ??

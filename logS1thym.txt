@@ -6,3 +6,44 @@
 - 프로퍼티 접근을 기본으로 하되 필드를 그냥 사용하는 것도 가능
 # 지역 변수 사용
 - with로 자바에서 쓰듯 가능
+
+3 스프링 객체 - 편의 객체 : 기본적으로 #xxx 로 사용
+# param, session
+- 쿼리파라미터, 세션을 직접 스프링에서 쓸 수 있음
+# 스프링 빈
+- @Component로 등록한 스프링 빈 역시 직접 사용 가능
+
+4 스프링 객체 - 유틸리티 객체
+# 컬렉션, 날짜, 메세지 등 다양한 객체 지원
+# 자바8 localTime의 경우 스프링부트 사용시 기본 라이브러리로 제공
+
+5 링크
+# /hello/data1?param2=data2 > @{/hello/{param1}(param1=${param1}, param2=${param2})}
+
+6 리터럴
+# 타임리프에서 리터럴은 반드시 ''로 감싸야함, 단 공백이 없다면 하나의 토큰으로 간주 > '' 생략 가능
+- "'hello'"< '' 생략 가능
+# 리터럴 대체를 이용하면 편리
+- |hello ${data}| > data만 치환됨
+
+7 연산
+# 비교 연산자 (gt, ge...) 등 html 엔티티 사용 주의
+# 엘비스 연산자
+- if의 null버전
+# No operation
+- '_'를 suffix로 쓰면 연산 무효
+
+8 속성 값 추가(html 생략)
+# th:classappend
+- 공백 신경 x
+# checkbox
+- 에서 checked=false 속성의 경우 false 상관없이 checked 속성만으로 체크됨 > th:checked=false의 경우 렌더링시 그냥 속성 제거
+
+
+ 템플릿 레이아웃
+#th:fragment
+- insert는 태그 생성, replace는 태그 대체
+- copy param으로 변수 이동 가능
+#layout
+- 공통 layout에 공통이 아닌 태그들을 따로 특정 template에서 지정해서 넘겨주면 > 공통+특정 태그 렌더링됨
+- th:block은 여러 html태그를 하나로 묶어줌
