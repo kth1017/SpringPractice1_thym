@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @Controller
 @RequestMapping("/basic")
@@ -105,4 +106,29 @@ public class BasicController {
         model.addAttribute("data", "Spring!");
         return "basic/operation";
     }
+
+    // 8 반복
+    @GetMapping("/each")
+    public String each(Model model) {
+        addUsers(model);
+        return "basic/each";
+    }
+    private void addUsers(Model model) {
+        List<User> list = new ArrayList<>();
+        list.add(new User("userA", 10));
+        list.add(new User("userB", 20));
+        list.add(new User("userC", 30));
+        model.addAttribute("users", list);
+    }
+
+    // 9 조건부 평가
+    @GetMapping("/condition")
+    public String condition(Model model) {
+        addUsers(model);
+        return "basic/condition";
+    }
+
+
+
+
 }
