@@ -107,7 +107,8 @@ public class BasicController {
         return "basic/operation";
     }
 
-    // 8 반복
+    // 8 속성 생략
+    // 9 반복
     @GetMapping("/each")
     public String each(Model model) {
         addUsers(model);
@@ -121,13 +122,15 @@ public class BasicController {
         model.addAttribute("users", list);
     }
 
-    // 9 조건부 평가
+    // 10 조건부 평가
     @GetMapping("/condition")
     public String condition(Model model) {
         addUsers(model);
         return "basic/condition";
     }
 
+    // 11 주석 생략
+    // 12 블록 생략
 
 
 

@@ -33,12 +33,27 @@
 # No operation
 - '_'를 suffix로 쓰면 연산 무효
 
-8 속성 값 추가(html 생략)
+8 속성 값 추가(생략)
 # th:classappend
 - 공백 신경 x
 # checkbox
 - 에서 checked=false 속성의 경우 false 상관없이 checked 속성만으로 체크됨 > th:checked=false의 경우 렌더링시 그냥 속성 제거
 
+9 반복
+# xxStat으로 반복 상태 유지 - index, count, odd 등
+- Stat 생략 가능
+
+11 주석(생략)
+# HTML 주석 / 타임리프 파서 주석
+- 타임리프가 렌더링하지않고 냅둠 / 렌더링할때 타임리프가 지워버림
+# 타임리프 프로토타입 주석
+- 브라우저는 렌더링하지 않지만 타임리프는 렌더링 함
+
+12 블록(생략)
+# html 미지원하는 기능일때 타임리프 자체 태그
+- ex)div 두개를 반복해서 출력 - div1 이름1 div2 나이1 > div1 이름2 div2 나이2 ...
+
+13 이후부터는 다른 프로젝트 수록
 
  템플릿 레이아웃
 #th:fragment
